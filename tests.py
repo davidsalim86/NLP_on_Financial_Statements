@@ -1,4 +1,4 @@
-import collections
+import collections.abc
 from collections import OrderedDict
 import copy
 import pandas as pd
@@ -154,7 +154,7 @@ def does_data_match(obj_a, obj_b):
     except TypeError:
         data_is_close = obj_b == obj_a
     else:
-        if isinstance(obj_a, collections.Iterable):
+        if isinstance(obj_a, collections.abc.Iterable):
             data_is_close = data_is_close.all()
 
     return data_is_close
